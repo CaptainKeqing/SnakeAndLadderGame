@@ -9,18 +9,11 @@
 #include "Grid2D.h"
 #include "PlayerClass.h"
 #include <vector>
-#include <random>
-#include <string>
-#include <ctime>
-#include <chrono>
-#include <thread>
+
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.fmx"
 TForm1 *Form1;
-//Player me{ "Donovan" };
-//Player angie{ "Angie" };
-//std::vector<Player> players{me, angie};
 
 Player* player1{ new Player{} };
 Player* player2{ new Player{} };
@@ -101,7 +94,7 @@ void __fastcall TForm1::RollDiceClick(TObject *Sender)
 {
 	int randNum{ getRandomNumber(1, 6) };
 	TasksListBox->Items->Clear();
-//	std::this_thread::sleep_for(static_cast<std::chrono::milliseconds>(500));
+
 	TasksListBox->Items->Insert(0, "Rolling... ");
 
 

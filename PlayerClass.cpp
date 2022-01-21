@@ -1,7 +1,5 @@
 #include "PlayerClass.h"
 #include <string>
-#include <iostream>
-#include "Board.h"
 
 Player::Player(const std::string& name) : m_name{ name }, hasWon{ false }
 {
@@ -16,12 +14,10 @@ void Player::move(int steps) {
 	playerImage->Position->X = getPos()[0];
 	playerImage->Position->Y = getPos()[1];
 
-	std::cout << m_name << " is now at " << myPosition.getGrid() << '\n' <<'\n';
+//	std::cout << m_name << " is now at " << myPosition.getGrid() << '\n' <<'\n';
 
 	if (myPosition.getGrid() == 100)
-	{
 		hasWon = true;
-	}
 }
 
 

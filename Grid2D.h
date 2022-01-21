@@ -1,7 +1,7 @@
 #ifndef GRID_2D_H
 #define GRID_2D_H
 #include <array>
-#include <fmx.h>
+
 class Grid2D
 {
 private:
