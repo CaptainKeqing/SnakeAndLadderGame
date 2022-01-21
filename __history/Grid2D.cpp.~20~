@@ -1,0 +1,62 @@
+#include "Board.h"
+#include "Grid2D.h"
+#include <iostream>
+#include <map>
+
+int findByValue(std::map<int, int>& mapToLook, int valueToFind) {
+	// returns the Key of the corresponding value found, otherwise returns -1;
+	auto current{ mapToLook.begin() };
+	while (current != mapToLook.end()) {
+		if (current->second == valueToFind) {
+			return current->first;
+		}
+	}
+	return -1;
+}
+
+void Grid2D::advance(int stepsToTake) {
+	if (m_gridPosition + stepsToTake > 100)
+	{
+		int exceededBy{ m_gridPosition + stepsToTake - 100 };
+		std::cout << "Exceed end by " << exceededBy << '\n';
+		m_gridPosition = 100 - exceededBy - stepsToTake;		// -stepsToTake cause im adding stepsToTake after this block
+	}
+	m_gridPosition += stepsToTake;	// guaranteed not to exceed 100
+
+	int newGrid{ Board::returnGrid(m_gridPosition) };
+	if (newGrid != m_gridPosition) {
+		std::cout << "Walking to position " << m_gridPosition << "... ";
+		std::cout << (newGrid < m_gridPosition ? "You stepped on a snake!" : "You reached a ladder :)") << '\n';
+		m_gridPosition = newGrid;
+	}
+	int stepOnPlayer{ findByValue(Board::occupiedPositions, m_gridPosition)) };
+	if (stepOnPlayer != -1){
+		// stepped on a player
+
+	}
+
+	int rowIndex{};
+	int columnIndex{};
+	if (m_gridPosition % 10 == 0) {
+		rowIndex = m_gridPosition / 10 - 1;
+		columnIndex = (rowIndex % 2 == 0 ? 9 : 0);
+	}
+	else {
+		rowIndex = m_gridPosition / 10;
+		// check even or odd row
+		if (rowIndex % 2 == 0) {
+			columnIndex = m_gridPosition % 10 - 1;
+		}
+		else {
+			columnIndex = 10 - m_gridPosition % 10;
+			}
+	}
+	m_coords[0] = Board::horizontalCoords[columnIndex];
+	m_coords[1] = Board::verticalCoords[rowIndex];
+}
+
+void Grid2D::resetPosition(double x, double y){
+    m_gridPosition = 0;
+	m_coords[0] = x;
+	m_coords[1] = y;
+}

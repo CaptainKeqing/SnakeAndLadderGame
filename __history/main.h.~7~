@@ -1,0 +1,17 @@
+#ifndef MAIN_H
+#define MAIN_H
+#include <vector>
+#include "PlayerClass.h"
+#include <map>
+void setupRandomiser();
+int getRandomNumber(int min, int max);
+
+void playerTurn(Player& player);
+
+const std::vector<Player> setupGame();
+
+void playGame(std::vector<Player>& players);
+
+int findByValue(std::map<int, int>& mapToLook, int valueToFind);
+
+#endif

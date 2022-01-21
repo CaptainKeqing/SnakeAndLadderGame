@@ -1,0 +1,32 @@
+#ifndef GRID_2D_H
+#define GRID_2D_H
+#include <array>
+#include <fmx.h>
+class Grid2D
+{
+private:
+	enum class Direction {
+		right = 1,		// direction * offset moves it right if positive, left if negative
+		left = -1,
+		up,
+	};
+
+	int m_gridPosition{ 0 };		// start at 0, signifying out of board. ranges from 1-100.
+	Direction nextMove{Direction::up};
+	std::array<double, 2> m_coords{};
+public:
+	Grid2D(int playerID) : m_coords{ 3, 542.4 }
+	{
+	}
+
+	void convertGridToRowColumnOut(int grid, int& rowOut, int& columnOut);
+	void advance(int stepsToTake);
+
+	const std::array<double, 2> getPosition() const { return m_coords; }
+
+	// takes x and y because i want the reset to be controlled by Unit1.cpp
+    void resetPosition(double x, double y);
+	const int getGrid() const{ return m_gridPosition; }
+};
+#endif // !GRID_2D_H
+

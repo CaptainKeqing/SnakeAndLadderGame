@@ -1,0 +1,13 @@
+﻿[TasksListBox]
+Coordinates=10,10,139,212
+
+[BackgroundImage]
+Coordinates=159,10,119,58
+Visible=True
+
+[]
+Coordinates=10,232,72,58
+
+[RollDice]
+Coordinates=288,10,102,58
+

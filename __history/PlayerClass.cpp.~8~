@@ -1,0 +1,17 @@
+#include "PlayerClass.h"
+#include <string>
+#include <iostream>
+Player::Player(const std::string& name) : m_name{ name }, hasWon{ false }
+{
+	static int playerCount{ 0 };
+	playerID = playerCount++;
+}
+
+void Player::move(int steps) {
+	myPosition.advance(steps);
+	std::cout << m_name << " is now at " << myPosition.getGrid() << '\n' <<'\n';
+	if (myPosition.getGrid() == 100)
+	{
+		hasWon = true;
+	}
+}

@@ -1,0 +1,11 @@
+#ifndef MAIN_H
+#define MAIN_H
+#include <vector>
+int getRandomNumber(int min, int max);
+
+void playerTurn(Player& player);
+
+const std::vector<Player> setupGame();
+
+void playGame(std::vector<Player>& players);
+#endif
