@@ -11,8 +11,8 @@ void Player::move(int steps) {
 	myPosition.advance(steps);
 
 	// moving the image
-	playerImage->Position->X = getPos()[0];
-	playerImage->Position->Y = getPos()[1];
+//	playerImage->Position->X = getPos()[0];
+//	playerImage->Position->Y = getPos()[1];
 
 //	std::cout << m_name << " is now at " << myPosition.getGrid() << '\n' <<'\n';
 

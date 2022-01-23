@@ -3417,9 +3417,9 @@ object Form1: TForm1
           1DBE91D5B1F1B42516DE7DE6CDABB7742A268A4746F4CA584E9F6C21C3F4BDDB
           DCBC731D24F807B04B18271A60A6AD0000000049454E44AE426082}
       end>
-    Position.X = 3.000000000000000000
-    Position.Y = 614.000000000000000000
-    Size.Width = 49.000000000000000000
+    Position.X = 56.700000762939450000
+    Position.Y = 5.400000095367432000
+    Size.Width = 48.000000000000000000
     Size.Height = 42.000000000000000000
     Size.PlatformDefault = False
   end
@@ -3457,33 +3457,19 @@ object Form1: TForm1
     Text = 'Start'
     OnClick = StartGameClick
   end
-  object Image1: TImage
-    MultiResBitmap = <
-      item
-      end>
-    Position.X = 264.000000000000000000
-    Position.Y = 576.000000000000000000
-  end
-  object Button1: TButton
-    Position.X = 360.000000000000000000
-    Position.Y = 552.000000000000000000
-    TabOrder = 6
-    Text = 'Button1'
-    OnClick = Button1Click
-  end
-  object Button2: TButton
-    Position.X = 368.000000000000000000
-    Position.Y = 592.000000000000000000
-    TabOrder = 7
-    Text = 'Button2'
-    OnClick = Button2Click
-  end
   object ResetButton: TButton
     Position.X = 544.000000000000000000
     Position.Y = 32.000000000000000000
-    TabOrder = 8
+    TabOrder = 6
     Text = 'Reset Game'
     OnClick = ResetButtonClick
+  end
+  object Button1: TButton
+    Position.X = 384.000000000000000000
+    Position.Y = 568.000000000000000000
+    TabOrder = 9
+    Text = 'Button1'
+    OnClick = Button1Click
   end
   object ImageList1: TImageList
     Source = <
@@ -3798,6 +3784,20 @@ object Form1: TForm1
           end>
       end>
     Left = 432
+    Top = 616
+  end
+  object WalkingTimer: TTimer
+    Enabled = False
+    Interval = 10
+    OnTimer = WalkingTimerTimer
+    Left = 184
+    Top = 600
+  end
+  object EnableToAnimate: TTimer
+    Enabled = False
+    Interval = 255
+    OnTimer = EnableToAnimateTimer
+    Left = 64
     Top = 616
   end
 end

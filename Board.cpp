@@ -18,6 +18,13 @@ const int Board::searchDictionaries(int numToFind) {
 		if (value == Ladders.end())	// not on a ladder
 			return 0;	// 0 is not a valid board Position in my game.
 	}
+
+	// updates the steppedOnInfo with snake = true if this value is less
+	// than numToFind, which means player went backwards.
+	steppedOnInfo.snake = value->second < numToFind;
+	if (steppedOnInfo.snake){
+		steppedOnInfo.index = KeyToIndexSnakes[value->first];
+	}
 	return value->second;
 }
 

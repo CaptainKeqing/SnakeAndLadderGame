@@ -18,6 +18,7 @@
 #include <FMX.ScrollBox.hpp>
 #include <FMX.ImgList.hpp>
 #include <System.ImageList.hpp>
+#include <FMX.Ani.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -33,16 +34,17 @@ __published:	// IDE-managed Components
 	TRadioButton *RadioButton4;
 	TButton *Start;
 	TImageList *ImageList1;
-	TImage *Image1;
-	TButton *Button1;
-	TButton *Button2;
 	TButton *ResetButton;
+	TTimer *WalkingTimer;
+	TButton *Button1;
+	TTimer *EnableToAnimate;
 	void __fastcall RollDiceClick(TObject *Sender);
 	void __fastcall TasksListBoxItemClick(TCustomListBox * const Sender, TListBoxItem * const Item);
 	void __fastcall StartGameClick(TObject *Sender);
-	void __fastcall Button1Click(TObject *Sender);
-	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall ResetButtonClick(TObject *Sender);
+	void __fastcall WalkingTimerTimer(TObject *Sender);
+	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall EnableToAnimateTimer(TObject *Sender);
 
 
 private:	// User declarations
